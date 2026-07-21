@@ -28,6 +28,7 @@ Unlike paid subscription services, **Cluelessly runs completely offline on your 
 
 ### 1. Clone the repository
 ```bash 
+git clone [https://github.com/sendc0des/cluelessly.git]
 cd cluelessly
 ```
 ### 2. Install Node dependencies
