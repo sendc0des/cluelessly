@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Copilot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="app-wrapper">
+      
+      <!-- 1. The Pill Bar (Now constrained in width) -->
+      <div class="pill-bar" data-tauri-drag-region>
+        <button class="menu-item" id="hide-btn">Hide <kbd>Alt X</kbd></button>
+        <button class="menu-item" id="solve-btn">Screenshot</button>
+        <button class="menu-item" id="reset-btn">Start Over</button>
+      </div>
+
+      <!-- 2. The Output Window (Wider than the pill) -->
+      <div class="output-container" id="output-container" style="display: none;">
+        <!-- Conversational Output -->
+        <div class="markdown-body" id="ai-output"></div>
+        
+        <!-- Interactive Chat Input -->
+        <div class="chat-bar" id="chat-bar" style="display: none;">
+          <input type="text" id="chat-input" placeholder="Ask a follow-up question..." autocomplete="off"/>
+          <button id="chat-send-btn">Send</button>
+        </div>
+      </div>
+
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

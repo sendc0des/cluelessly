@@ -1,0 +1,103 @@
+* { box-sizing: border-box; margin: 0; padding: 0; -ms-overflow-style: none !important; scrollbar-width: none !important; }
+*::-webkit-scrollbar { display: none !important; }
+
+html, body { 
+  width: 100vw; height: 100vh;
+  background-color: transparent !important; 
+  overflow: hidden !important; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#app-wrapper {
+  display: flex; flex-direction: column;
+  padding: 10px; gap: 12px; width: 100%;
+}
+
+/* Compact Pill */
+.pill-bar {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 370px; /* Locked compact width */
+  margin: 0 auto; /* Keeps pill centered when the window expands */
+  background: rgba(30, 30, 30, 0.45); /* Highly transparent */
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  height: 44px; min-height: 44px; padding: 0 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: grab; user-select: none;
+}
+.pill-bar:active { cursor: grabbing; }
+
+.menu-item {
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none;
+  color: #b0b0b0; font-size: 13px; font-weight: 500; font-family: inherit;
+  height: 32px; padding: 0 14px; border-radius: 30px;
+  cursor: pointer; transition: all 0.2s; line-height: 1;
+}
+.menu-item:hover { color: #ffffff; background: rgba(255, 255, 255, 0.15); }
+.menu-item kbd { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0 6px; height: 18px; margin-left: 6px; font-size: 10px; display: flex; align-items: center;}
+
+/* Wider Output Box */
+.output-container {
+  display: flex; flex-direction: column;
+  width: 100%; /* Will take up the full 750px of the expanded window */
+  background: rgba(25, 25, 25, 0.55); /* Highly transparent */
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  max-height: 750px;
+}
+
+/* Chat Input Bar */
+.chat-bar {
+  display: flex; gap: 8px; margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+#chat-input {
+  flex-grow: 1; background: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+  color: #e2e8f0; padding: 10px 14px; font-size: 13px; outline: none;
+  transition: border-color 0.2s;
+}
+#chat-input:focus { border-color: rgba(255,255,255,0.25); }
+
+/* Minimalist Send Button */
+#chat-send-btn {
+  background: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  border-radius: 8px; 
+  color: #cbd5e1; 
+  font-weight: 500; 
+  font-size: 12px;
+  padding: 0 16px; 
+  cursor: pointer; 
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+#chat-send-btn:hover { 
+  background: rgba(255, 255, 255, 0.15); 
+  color: #ffffff; 
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Minimalist User Query Block */
+.user-query {
+  margin: 24px 0 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+  color: #e2e8f0; /* Darkened from bright white */
+  font-size: 20px; /* Increased size */
+}
+
+/* Markdown & Conversational Styling */
+.markdown-body { flex-grow: 1; overflow-y: auto; padding-right: 4px; }
+.markdown-body h3 { color: #ffffff; font-size: 14px; font-weight: 600; margin: 16px 0 8px 0; }
+.markdown-body h3:first-child { margin-top: 0; }
+.markdown-body p, .markdown-body li { color: #d4d4d4; font-size: 14px; line-height: 1.6; margin: 0 0 12px 0; }
+.markdown-body ul { padding-left: 20px; }
+.markdown-body pre { background: rgba(10, 10, 10, 0.6) !important; border-radius: 8px; padding: 16px; margin: 12px 0; border: 1px solid rgba(255, 255, 255, 0.05); }
+.markdown-body code { font-family: 'Consolas', 'Fira Code', monospace; font-size: 13px; }
+
+/* User Chat Bubble */
+.user-msg { color: #38bdf8; font-weight: 600; margin: 16px 0 4px 0; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 16px;}
